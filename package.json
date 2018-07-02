@@ -1,0 +1,25 @@
+{
+  "name": "sqlite3_server",
+  "version": "1.0.0",
+  "description": "sqlite3_server",
+  "main": "index.html",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikioOsaki/sqlite3_server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikioOsaki/sqlite3_server/issues"
+  },
+  "homepage": "https://github.com/MikioOsaki/sqlite3_server#readme"
+}
