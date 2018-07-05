@@ -16,21 +16,18 @@ app.use(express.static(__dirname + '/public'));
 app.post('/upload', function (req, res) { //post
 
     // inside upload-router function (req, res, next)
-    var formidable = require('formidable');
-    var fs = require('fs');
+    var formidable = require('formidable'),
+        util = require('util'),
+        fs = require('fs');
 
     var form = new formidable.IncomingForm();
     form.uploadDir = __dirname + '/public/temp/';
+    form.multiples = true;
 
-    form.parse(req, function (err, fields, files) {
-        var file = files.file;
-        var target = '/public/temp/' + file.name;
-        fs.rename(file.path, target, function (err) {
-            if (err)
-                return next(err);
-                //prepare sql
-        });
+    form.parse(req, function(err, fields, files) {
+        res.write("bla");
     });
+
 
 });
 
