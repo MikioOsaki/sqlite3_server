@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "gulp": "^3.9.1",
+    "serve-favicon": "^2.5.0",
     "sqlite3": "^4.0.1"
   },
   "devDependencies": {
