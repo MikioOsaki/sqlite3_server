@@ -4,11 +4,13 @@
   "description": "sqlite3_server",
   "main": "index.html",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "gulp": "^3.9.1",
     "sqlite3": "^4.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-nodemon": "^2.2.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"

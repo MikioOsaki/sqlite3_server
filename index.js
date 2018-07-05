@@ -3,13 +3,17 @@ var app = express();
 
 var port = process.env.PORT || 8081;
 
+var bodyParser = require('body-parser');
+app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
+//retrive data
+app.post('/upload', function (req, res) { //post
     res.writeHead(200, {
         'Content-Type': 'text/html'
     });
     res.write("<h1>Landing Page for SQLite3 Data Server</h1>");
+    res.write("<p>request: " + req.body + "</p>");
     res.end();
 });
 
@@ -28,7 +32,7 @@ db.serialize(function () {
     var stmt = db.prepare('INSERT INTO lorem VALUES (?)');
 
     for (var i = 0; i < 10; i++) {
-        stmt.run('Ipsum ' + i);
+        stmt.run('Lololo ' + i);
     }
 
     stmt.finalize();
