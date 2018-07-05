@@ -14,14 +14,24 @@ app.use(express.static(__dirname + '/public'));
 
 //retrive data
 app.post('/upload', function (req, res) { //post
-    res.writeHead(200, {
-        'Content-Type': 'application/json'
+
+    // inside upload-router function (req, res, next)
+    var formidable = require('formidable');
+    var fs = require('fs');
+
+    var form = new formidable.IncomingForm();
+    form.uploadDir = __dirname + '/public/temp/';
+
+    form.parse(req, function (err, fields, files) {
+        var file = files.file;
+        var target = '/public/temp/' + file.name;
+        fs.rename(file.path, target, function (err) {
+            if (err)
+                return next(err);
+                //prepare sql
+        });
     });
 
-    res.write("<h1>Landing Page for SQLite3 Data Server</h1>");
-    res.write("<p>request: " + req.body + "</p>");
-    res.write("<p>Yey! :)</p>");
-    res.end();
 });
 
 app.listen(port, function () {
